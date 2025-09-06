@@ -10,6 +10,7 @@ let btn7 = document.getElementById("seven")
 let btn8 = document.getElementById("eight")
 let btn9 = document.getElementById("nine")
 let btn0 = document.getElementById("zero")
+let period = document.getElementById("period")
 
 let addBtn = document.getElementById("add")
 let subtBtn = document.getElementById("subtract")
@@ -65,6 +66,19 @@ const operate = (first,op,last) => {
 
 
 //populate num values
+period.addEventListener("click", () => {
+    if(operand == ""){
+        if (!num1.includes(".")){
+            num1 += "."
+        }
+    } else {
+         if (!num2.includes(".")) {
+            num2 += ".";
+        }
+    }
+        operation.textContent = num1 + " " + operand + " " + num2;
+})
+
 btn0.addEventListener("click", () => {
     if(operand == ""){
         num1 += "0"
