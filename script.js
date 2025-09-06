@@ -65,106 +65,106 @@ const operate = (first,op,last) => {
 //populate num values
 btn1.addEventListener('click', () => {
     if(operand == ""){
-        num1.concat("1")
+        num1 += "1"
     } else {
-        num2.concat("1")
+        num2 += "1"
     }
 })
 
 btn2.addEventListener('click', () => {
     if(operand == ""){
-        num1.concat("2")
+        num1 += "2"
     } else {
-        num2.concat("2")
+        num2 += "2"
     }
 })
 
 btn3.addEventListener('click', () => {
     if(operand == ""){
-        num1.concat("3")
+        num1 += "3"
     } else {
-        num2.concat("3")
+        num2 += "3"
     }
 })
 
 btn4.addEventListener('click', () => {
     if(operand == ""){
-        num1.concat("4")
+        num1 += "4"
     } else {
-        num2.concat("4")
+        num2 += "4"
     }
 })
 
 btn5.addEventListener('click', () => {
     if(operand == ""){
-        num1.concat("5")
+        num1 += "5"
     } else {
-        num2.concat("5")
+        num2 += "5"
     }
 })
 
 btn6.addEventListener('click', () => {
     if(operand == ""){
-        num1.concat("6")
+        num1 += "6"
     } else {
-        num2.concat("6")
+        num2 += "6"
     }
 })
 
 btn7.addEventListener('click', () => {
     if(operand == ""){
-        num1.concat("7")
+        num1 += "7"
     } else {
-        num2.concat("7")
+        num2 += "7"
     }
 })
 
 btn8.addEventListener('click', () => {
     if(operand == ""){
-        num1.concat("8")
+        num1 += "8"
     } else {
-        num2.concat("8")
+        num2 += "8"
     }
 })
 
 btn9.addEventListener('click', () => {
     if(operand == ""){
-        num1.concat("9")
+        num1 += "9"
     } else {
-        num2.concat("9")
+        num2 += "9"
     }
 })
 
-btn0.addEventListener("click", () => {
-    if(operand == ""){
-        num1.concat("9")
-    } else {
-        num2.concat("9")
-    }
-})
+// btn0.addEventListener("click", () => {
+//     if(operand == ""){
+//         num1 += "0"
+//     } else {
+//         num2 += "0"
+//     }
+// })
 //populate operand values
 
 addBtn.addEventListener("click", () => {
     if (num1 !== ""){
-        operand.concat("+")
+        operand += "+"
     }
 })
 
 subtBtn.addEventListener("click", () => {
     if (num1 !== ""){
-        operand.concat("-")
+        operand += "-"
     }
 })
 
 divBtn.addEventListener("click", () => {
     if (num1 !== ""){
-        operand.concat("/")
+        operand += "/"
     }
 })
 
 mulpBtn.addEventListener("click", () => {
     if (num1 !== ""){
-        operand.concat("*")
+        operand += "*"
     }
 })
 eqlBtn.addEventListener("click", () =>{
