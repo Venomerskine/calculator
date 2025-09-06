@@ -63,6 +63,14 @@ const operate = (first,op,last) => {
 
 
 //populate num values
+btn0.addEventListener("click", () => {
+    if(operand == ""){
+        num1 += "0"
+    } else {
+        num2 += "0"
+    }
+})
+
 btn1.addEventListener('click', () => {
     if(operand == ""){
         num1 += "1"
@@ -135,13 +143,7 @@ btn9.addEventListener('click', () => {
     }
 })
 
-// btn0.addEventListener("click", () => {
-//     if(operand == ""){
-//         num1 += "0"
-//     } else {
-//         num2 += "0"
-//     }
-// })
+
 //populate operand values
 
 addBtn.addEventListener("click", () => {
@@ -170,4 +172,7 @@ mulpBtn.addEventListener("click", () => {
 eqlBtn.addEventListener("click", () =>{
     let ans = operate(num1,operand,num2)
     answer.textContent = ans
+    num1 = ""
+    num2 = ""
+    operand = ""
 })
