@@ -19,6 +19,7 @@ let divBtn = document.getElementById("divide")
 let eqlBtn = document.getElementById("equals")
 
 let clear = document.getElementById("clear")
+let backspaceBtn = document.getElementById("backspace")
 
 //get sections
 let answer = document.getElementById("ans")
@@ -50,6 +51,10 @@ const divide = (a,b) => {
 const operate = (first,op,last) => {
     first = Number(first)
     last = Number(last)
+
+     if (op === "/" && last === 0) {
+        return "Error"; // Return a specific error message
+    }
 
     if (op == "+"){
        return  add(first,last)
@@ -225,12 +230,31 @@ eqlBtn.addEventListener("click", () => {
         let finalAns = operate(num1, operand, num2);
         answer.textContent = finalAns;
         operation.textContent = num1 + " " + operand + " " + num2 + " =";
+        const maxLength = 8;
+        if (finalAns.toString().length > maxLength) {
+    finalAns = Number(finalAns.toPrecision(maxLength));
+}
+
 
         num1 = finalAns.toString();
         num2 = "";
         operand = "";
     }
 });
+
+backspaceBtn.addEventListener("click", () => {
+     if (num2 !== "") {
+        num2 = num2.slice(0, -1);
+    } 
+    else if (operand !== "") {
+        operand = ""; 
+    } 
+    else {
+        num1 = num1.slice(0, -1);
+    }
+    operation.textContent = num1 + " " + operand + " " + num2;
+});
+
 
 clear.addEventListener("click", () => {
     num1 = ""
@@ -240,3 +264,39 @@ clear.addEventListener("click", () => {
     operand = ""
 
 }) 
+
+
+//keyboard support
+document.addEventListener('keydown', (e) => {
+    const key = e.key;
+
+    // if (!isNaN(key)) { 
+    //     // Numbers 0–9
+    //     document.getElementById(`btn${key}`).click();
+    // }
+
+    if (key === '.') {
+        decBtn.click();
+    }
+
+    if (key === '+' || key === '-' || key === '*' || key === '/') {
+        switch (key) {
+            case '+': addBtn.click(); break;
+            case '-': subtBtn.click(); break;
+            case '*': mulpBtn.click(); break;
+            case '/': divBtn.click(); break;
+        }
+    }
+
+    if (key === 'Enter' || key === '=') {
+        eqlBtn.click();
+    }
+
+    if (key === 'Backspace') {
+        backspaceBtn.click();
+    }
+
+    if (key.toLowerCase() === 'c') {
+        clear.click();
+    }
+});
