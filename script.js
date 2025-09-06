@@ -17,6 +17,8 @@ let mulpBtn = document.getElementById("multiply")
 let divBtn = document.getElementById("divide")
 let eqlBtn = document.getElementById("equals")
 
+let clear = document.getElementById("clear")
+
 //get sections
 let answer = document.getElementById("ans")
 let operation = document.getElementById("operation")
@@ -69,6 +71,7 @@ btn0.addEventListener("click", () => {
     } else {
         num2 += "0"
     }
+    operation.textContent = num1 + " " + operand + " " + num2
 })
 
 btn1.addEventListener('click', () => {
@@ -77,6 +80,7 @@ btn1.addEventListener('click', () => {
     } else {
         num2 += "1"
     }
+    operation.textContent = num1 + " " + operand + " " + num2
 })
 
 btn2.addEventListener('click', () => {
@@ -85,6 +89,7 @@ btn2.addEventListener('click', () => {
     } else {
         num2 += "2"
     }
+    operation.textContent = num1 + " " + operand + " " + num2
 })
 
 btn3.addEventListener('click', () => {
@@ -93,6 +98,7 @@ btn3.addEventListener('click', () => {
     } else {
         num2 += "3"
     }
+    operation.textContent = num1 + " " + operand + " " + num2
 })
 
 btn4.addEventListener('click', () => {
@@ -101,6 +107,7 @@ btn4.addEventListener('click', () => {
     } else {
         num2 += "4"
     }
+    operation.textContent = num1 + " " + operand + " " + num2
 })
 
 btn5.addEventListener('click', () => {
@@ -109,6 +116,7 @@ btn5.addEventListener('click', () => {
     } else {
         num2 += "5"
     }
+    operation.textContent = num1 + " " + operand + " " + num2
 })
 
 btn6.addEventListener('click', () => {
@@ -117,6 +125,7 @@ btn6.addEventListener('click', () => {
     } else {
         num2 += "6"
     }
+    operation.textContent = num1 + " " + operand + " " + num2
 })
 
 btn7.addEventListener('click', () => {
@@ -125,6 +134,7 @@ btn7.addEventListener('click', () => {
     } else {
         num2 += "7"
     }
+    operation.textContent = num1 + " " + operand + " " + num2
 })
 
 btn8.addEventListener('click', () => {
@@ -133,6 +143,7 @@ btn8.addEventListener('click', () => {
     } else {
         num2 += "8"
     }
+    operation.textContent = num1 + " " + operand + " " + num2
 })
 
 btn9.addEventListener('click', () => {
@@ -141,6 +152,7 @@ btn9.addEventListener('click', () => {
     } else {
         num2 += "9"
     }
+    operation.textContent = num1 + " " + operand + " " + num2
 })
 
 
@@ -205,3 +217,12 @@ eqlBtn.addEventListener("click", () => {
         operand = "";
     }
 });
+
+clear.addEventListener("click", () => {
+    num1 = ""
+    num2 = ""
+    answer.textContent = ""
+    operation.textContent = ""
+    operand = ""
+
+}) 
