@@ -147,32 +147,61 @@ btn9.addEventListener('click', () => {
 //populate operand values
 
 addBtn.addEventListener("click", () => {
-    if (num1 !== ""){
-        operand += "+"
+    if (num1 !== "" && num2 !== "" && operand !== "") {
+        let result = operate(num1, operand, num2);
+        num1 = result.toString();
+        num2 = ""; 
+        answer.textContent = result; 
     }
-})
+    
+    operand = "+";
+    operation.textContent = num1 + " " + operand;
+});
+
 
 subtBtn.addEventListener("click", () => {
-    if (num1 !== ""){
-        operand += "-"
+   if (num1 !== "" && num2 !== "" && operand !== "") {
+        let result = operate(num1, operand, num2);
+        num1 = result.toString();
+        num2 = ""; 
+        answer.textContent = result; 
     }
+    
+    operand = "-";
+    operation.textContent = num1 + " " + operand;
 })
 
 divBtn.addEventListener("click", () => {
-    if (num1 !== ""){
-        operand += "/"
+    if (num1 !== "" && num2 !== "" && operand !== "") {
+        let result = operate(num1, operand, num2);
+        num1 = result.toString();
+        num2 = ""; 
+        answer.textContent = result; 
     }
+    
+    operand = "/";
+    operation.textContent = num1 + " " + operand;
 })
 
 mulpBtn.addEventListener("click", () => {
-    if (num1 !== ""){
-        operand += "*"
+    if (num1 !== "" && num2 !== "" && operand !== "") {
+        let result = operate(num1, operand, num2);
+        num1 = result.toString();
+        num2 = ""; 
+        answer.textContent = result; 
     }
+    
+    operand = "*";
+    operation.textContent = num1 + " " + operand;
 })
-eqlBtn.addEventListener("click", () =>{
-    let ans = operate(num1,operand,num2)
-    answer.textContent = ans
-    num1 = ""
-    num2 = ""
-    operand = ""
-})
+eqlBtn.addEventListener("click", () => {
+    if (num1 !== "" && num2 !== "" && operand !== "") {
+        let finalAns = operate(num1, operand, num2);
+        answer.textContent = finalAns;
+        operation.textContent = num1 + " " + operand + " " + num2 + " =";
+
+        num1 = finalAns.toString();
+        num2 = "";
+        operand = "";
+    }
+});
